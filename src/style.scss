@@ -1,0 +1,121 @@
+@import './variables';
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+body {
+	font-family: $font-lexend-deca;
+	background-color: $neutral-very-light-gray;
+}
+
+.main {
+	display: grid;
+	place-items: center;
+	min-height: 100vh;
+	position: relative;
+	margin: 5rem 0;
+	@media screen and (min-width: $desktop) {
+		margin: auto;
+	}
+}
+
+.preview-cards {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0 1.5rem;
+
+	@media screen and (min-width: $desktop) {
+		flex-direction: row;
+	}
+}
+
+.card {
+	padding: 3rem;
+	display: grid;
+	place-items: start;
+	gap: 2rem;
+
+	@media screen and (min-width: $desktop) {
+		width: 19rem;
+	}
+
+	&__title {
+		font-family: $font-big-shoulders-display;
+		font-size: 28pt;
+		color: $neutral-very-light-gray;
+	}
+
+	&__description {
+		font-size: 14px;
+		color: $neutral-transparent-white;
+		line-height: 1.5rem;
+		letter-spacing: 0.025rem;
+	}
+
+	&__button {
+		border: none;
+		border-radius: 2rem;
+		padding: 0.85rem 2rem;
+		background-color: $neutral-very-light-gray;
+		cursor: pointer;
+		font-weight: bold;
+		border: 2px solid transparent;
+
+		@media screen and (min-width: $desktop) {
+			margin-top: 2rem;
+			font-size: 14px;
+		}
+
+		&:active {
+			background-color: transparent;
+			color: $neutral-very-light-gray;
+			border: 2px solid $neutral-very-light-gray;
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	&--sedans {
+		background-color: $primary-bright-orange;
+		border-radius: 0.5rem 0.5rem 0 0;
+
+		@media screen and (min-width: $desktop) {
+			border-radius: 0.5rem 0 0 0.5rem;
+		}
+
+		button {
+			color: $primary-bright-orange;
+		}
+	}
+
+	&--suvs {
+		background-color: $primary-dark-cyan;
+
+		button {
+			color: $primary-dark-cyan;
+		}
+	}
+
+	&--luxury {
+		background-color: $primary-dery-dark-cyan;
+		border-radius: 0 0 0.5rem 0.5rem;
+
+		@media screen and (min-width: $desktop) {
+			border-radius: 0 0.5rem 0.5rem 0;
+		}
+
+		button {
+			color: $primary-dery-dark-cyan;
+		}
+	}
+}
